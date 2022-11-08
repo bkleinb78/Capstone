@@ -1,10 +1,7 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
-
-class Show(models.Model):
-    name = models.Charfield(max_length=50)
-    address = models.Charfield(max_length=50)
-    date = models.Charfield(max_length=50)
-    time = models.Charfield(max_length=50)
+class Event(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
+    date = models.CharField(max_length=50)
+    time = models.CharField(max_length=50)
