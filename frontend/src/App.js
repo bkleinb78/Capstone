@@ -13,20 +13,23 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import Events from "./pages/Events/Events";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import Inquiry from "./pages/Inquiry/Inquiry";
+import Payments from "./pages/Payments/Payments";
+
 
 function App() {
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/" element ={<HomePage />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/inquiry" element={<Inquiry />} />
+        <Route path="/payments" element={<Payments />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
