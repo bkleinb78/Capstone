@@ -52,7 +52,7 @@ const Events = () => {
     },
   ];
 
-  const baseUrl = "";
+  const baseUrl = "http://127.0.0.1:8000/api";
 
   useEffect(() => {
     const getEvents = async () => {
@@ -74,7 +74,7 @@ const Events = () => {
       <div className="events">
         <h3>Available events :</h3>
         <div className="events_container">
-          {fakeEvents?.map((event, index) => (
+          {events?.map((event, index) => (
             <div className="event" key={index}>
               <h4 className="event_name">{event.name}</h4>
               <p className="event_address">{event.address}</p>
@@ -87,7 +87,7 @@ const Events = () => {
       <div className="tracks">
         <h3>Available tracks :</h3>
         <div className="tracks_container">
-          {fakeTracks?.map((track, index) => (
+          {tracks?.map((track, index) => (
             <div className="track" key={index}>
               <h4 className="track_title">{track.title}</h4>
               <p className="track_artist">{track.artist}</p>
