@@ -6,53 +6,54 @@ const Events = () => {
   const [events, setEvents] = useState([]);
   const [tracks, setTracks] = useState([]);
 
-  const fakeEvents = [
-    {
-      name: "Event 1",
-      address: "123 usa",
-      date: "10/10/2010",
-      time: "20 min",
-    },
-    {
-      name: "Event 2",
-      address: " sdfhh usa",
-      date: "10/10/2010",
-      time: "20 min",
-    },
-  ];
+  // const fakeEvents = [
 
-  const fakeTracks = [
-    {
-      title: "Track 1",
-      artist: "John",
-      album: "album 1",
-      genre: "genre 1",
-      release_date: "10/10/2010",
-    },
-    {
-      title: "Track 1",
-      artist: "John",
-      album: "album 1",
-      genre: "genre 1",
-      release_date: "10/10/2010",
-    },
-    {
-      title: "Track 1",
-      artist: "John",
-      album: "album 1",
-      genre: "genre 1",
-      release_date: "10/10/2010",
-    },
-    {
-      title: "Track 1",
-      artist: "John",
-      album: "album 1",
-      genre: "genre 1",
-      release_date: "10/10/2010",
-    },
-  ];
+  //   {
+  //     name: "Event 1",
+  //     address: "123 usa",
+  //     date: "10/10/2010",
+  //     time: "20 min",
+  //   },
+  //   {
+  //     name: "Event 2",
+  //     address: " sdfhh usa",
+  //     date: "10/10/2010",
+  //     time: "20 min",
+  //   },
+  // ];
 
-  const baseUrl = "";
+  // const fakeTracks = [
+  //   {
+  //     title: "Track 1",
+  //     artist: "John",
+  //     album: "album 1",
+  //     genre: "genre 1",
+  //     release_date: "10/10/2010",
+  //   },
+  //   {
+  //     title: "Track 1",
+  //     artist: "John",
+  //     album: "album 1",
+  //     genre: "genre 1",
+  //     release_date: "10/10/2010",
+  //   },
+  //   {
+  //     title: "Track 1",
+  //     artist: "John",
+  //     album: "album 1",
+  //     genre: "genre 1",
+  //     release_date: "10/10/2010",
+  //   },
+  //   {
+  //     title: "Track 1",
+  //     artist: "John",
+  //     album: "album 1",
+  //     genre: "genre 1",
+  //     release_date: "10/10/2010",
+  //   },
+  // ];
+
+  const baseUrl = "http://127.0.0.1:8000/api";
 
   useEffect(() => {
     const getEvents = async () => {
@@ -74,7 +75,7 @@ const Events = () => {
       <div className="events">
         <h3>Available events :</h3>
         <div className="events_container">
-          {fakeEvents?.map((event, index) => (
+          {events?.map((event, index) => (
             <div className="event" key={index}>
               <h4 className="event_name">{event.name}</h4>
               <p className="event_address">{event.address}</p>
@@ -87,7 +88,7 @@ const Events = () => {
       <div className="tracks">
         <h3>Available tracks :</h3>
         <div className="tracks_container">
-          {fakeTracks?.map((track, index) => (
+          {tracks?.map((track, index) => (
             <div className="track" key={index}>
               <h4 className="track_title">{track.title}</h4>
               <p className="track_artist">{track.artist}</p>

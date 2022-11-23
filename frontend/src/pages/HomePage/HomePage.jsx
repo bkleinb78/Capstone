@@ -10,13 +10,31 @@ const HomePage = () => {
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
   const [cars, setCars] = useState([]);
+  const [events, setEvents] = useState([]);
+  
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        let response = await axios.get("http://127.0.0.1:8000/api/events/", {
+          headers: {
+            Authorization:  `Bearer ${JSON.parse(token)}`
+          },
+        });
+        setEvents(response.data);
+      } catch (error) {
+        console.log(error.response.data);
+      }
+    };
+    fetchEvents();
+  }, [token])
+  console.log(events);
 
   useEffect(() => {
     const fetchCars = async () => {
       try {
         let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization:  `Bearer ${JSON.parse(token)}`
           },
         });
         setCars(response.data);
@@ -25,11 +43,13 @@ const HomePage = () => {
       }
     };
     fetchCars();
-  }, [token]);
+  }, [token])
+  console.log(cars);
+
   return (
     <div className="container">
-             <h2>Welcome to Wolfman's entrtainment and karaoke</h2>
-        </div>
+      <h2>Welcome to Wolfman's entrtainment and karaoke</h2>
+    </div>
   );
 };
 
