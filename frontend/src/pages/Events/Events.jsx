@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "./Events.css";
+import axios from 'axios';
+
 
 const Events = () => {
   const [events, setEvents] = useState([]);
-  const [tracks, setTracks] = useState([]);
+  const [tracks, setMusic] = useState([]);
 
   // const fakeEvents = [
 
@@ -53,22 +55,47 @@ const Events = () => {
   //   },
   // ];
 
-  const baseUrl = "http://127.0.0.1:8000/api";
+  // const baseUrl = "http://127.0.0.1:8000/api";
+
+  // useEffect(() => {
+  //   const getEvents = async () => {
+  //     const res = await axios.get(`${baseUrl}/events`);
+  //     const json = await res.json();
+  //     setEvents(json);
+  //   };
+  //   const getMusic = async () => {
+  //     const res = await axios.get(`${baseUrl}/music`);
+  //     const json = await res.json();
+  //     setMusic(json);
+  //   };
+  //   getEvents();
+  //   getMusic();
+  // }, []);
 
   useEffect(() => {
-    const getEvents = async () => {
-      const res = await fetch(`${baseUrl}/events`);
-      const json = await res.json();
-      setEvents(json);
-    };
-    const getTracks = async () => {
-      const res = await fetch(`${baseUrl}/music`);
-      const json = await res.json();
-      setTracks(json);
-    };
-    getEvents();
-    getTracks();
+    getAllEvents();
   }, []);
+
+  async function getAllEvents(){
+    let response = await axios.get('http://127.0.0.1:8000/api/events/');
+    setEvents(response.data)
+  }
+
+  useEffect(() => {
+    getAllMusic();
+  }, []);
+
+  async function getAllMusic(){
+    let response = await axios.get('http://127.0.0.1:8000/api/music/');
+    setMusic(response.data)
+  }
+
+// axios({
+//   method: "GET",
+//   url: "http://127.0.0.1:8000/api/events",
+//   }).then(function (response) {
+//     console.log(response.data);
+//   });
 
   return (
     <div className="EventsPage">
@@ -85,9 +112,9 @@ const Events = () => {
           ))}
         </div>
       </div>
-      <div className="tracks">
+      <div className="track">
         <h3>Available tracks :</h3>
-        <div className="tracks_container">
+        <div className="track_container">
           {tracks?.map((track, index) => (
             <div className="track" key={index}>
               <h4 className="track_title">{track.title}</h4>

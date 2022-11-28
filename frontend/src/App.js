@@ -22,9 +22,10 @@ import Payments from "./pages/Payments/Payments";
 const Layout = (
   
   <Routes>
-      <Route path="/" element={<HomePage />} />
+    <Route path="/" element={<HomePage />} />
     <Route path="/events" element={<Events />} />
     <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
     <Route path="/inquiry" element={<Inquiry />} />
     <Route path="/payments" element={<Payments />} />
     <Route path="/register" element={<RegisterPage />} />
@@ -40,6 +41,7 @@ function App() {
         <Route path="/" element ={<HomePage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/payments" element={<Payments />} />
         <Route path="/register" element={<RegisterPage />} />

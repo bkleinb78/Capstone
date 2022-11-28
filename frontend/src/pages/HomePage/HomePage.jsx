@@ -17,7 +17,7 @@ const HomePage = () => {
       try {
         let response = await axios.get("http://127.0.0.1:8000/api/events/", {
           headers: {
-            Authorization:  `Bearer ${JSON.parse(token)}`
+            Authorization:  "Bearer " + token,
           },
         });
         setEvents(response.data);
@@ -26,7 +26,7 @@ const HomePage = () => {
       }
     };
     fetchEvents();
-  }, [token])
+  }, [token]);
   console.log(events);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const HomePage = () => {
       try {
         let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
           headers: {
-            Authorization:  `Bearer ${JSON.parse(token)}`
+            Authorization:  "Bearer " + token,
           },
         });
         setCars(response.data);
@@ -43,8 +43,7 @@ const HomePage = () => {
       }
     };
     fetchCars();
-  }, [token])
-  console.log(cars);
+  }, [token]);
 
   return (
     <div className="container">
