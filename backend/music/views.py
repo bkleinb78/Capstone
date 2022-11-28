@@ -9,8 +9,8 @@ from .models import Track
 @api_view(['GET', 'POST'])
 def music_list(request):
     if request.method == 'GET':
-        Music = Track.objects.all()
-        serializer = TrackSerializer(music_list, many=True)
+        music = Track.objects.all()
+        serializer = TrackSerializer(music, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = TrackSerializer(data=request.data)
@@ -20,14 +20,15 @@ def music_list(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def music_detail(request, pk):
-    event = get_object_or_404(Track, pk=pk)
-    if request.method =='GET':
-        track = get_object_or_404(Track, pk=pk)
+    track = get_object_or_404(track, pk=pk)
+    if request.method == 'GET':
+        track = get_object_or_404(Track, pk-pk)
         serializer = TrackSerializer(track)
         return Response(serializer.data)
     elif request.method == 'PUT':
         serializer = TrackSerializer(track, data=request.data)
         serializer.is_valid(raise_exception=True)
+        serializer.save()
         return Response(serializer.data)
     elif request.method == 'DELETE':
         track.delete()
