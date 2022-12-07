@@ -1,81 +1,51 @@
-.EventsPage {
-    width: 100%;
-    display: auto;
-    flex-direction: column;
-    gap: 6vh;
-  }
-  
-  .events,
-  .tracks {
-    display: grid;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 6vh;
-    gap: 4vh;
-  }
-  
-  .events_container,
-  .tracks_container {
-    display: grid;
-    align-items: auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 6vh;
-  }
-  
-  .event-grid {
-    display: grid;
-    align-self: auto;
-    grid-template-columns: 5;
-    grid-template-rows: 5;
-    background-color: white;
-    width: 75%;
-  }
-  
-  .track {
-    display: grid;
-    width: 100%;
-    background-color: white;
-    gap: 3vh;
-  }
-  
-  .event_name {
-    text-align: left;
-    align-items: left;
-  }
-  .event_address {
-    text-align: left;
-  }
+ul {
+	display: flex;
+	justify-content: space-around;
+	list-style-type: none;
+}
 
-  .track_artist {
-    grid-area: 5px;
-  }
+li {
+	font-size: 1.25rem;
+}
 
-  .event_date {
-    grid-area: 5px;
-  }
+.navBar {
+	background: steelblue;
+	box-shadow: 4px 2px 5px;
+	color: white;
+	margin-bottom: 2rem;
+	padding: 1.5rem 2rem;
+}
 
-  .track_album {
-    grid-area: 5px;
-  }
+.navBar button {
+	background: transparent;
+	border: 2px solid white;
+	color: purple;
+	padding: 0.4rem 0.5rem;
+}
 
-  .event_time {
-    grid-area: 5px;
-  }
+.navBar button:hover {
+	background: white;
+	color: steelblue;
+	cursor: pointer;
+}
 
-  .track_genre {
-    grid-area: 5px;
-  }
-  
-  .track_date {
-    grid-area: 5px;
-  }
-  
-  .track_title,
-  .track_artist,
-  .track_album,
-  .track_date,
-  .track_genre {
-    width: 100%;
-    gap: 5vh;
-  }
+.brand {
+	cursor: pointer;
+	font-size: 2rem;
+}
+
+img {
+	display: flex;
+	width: 100%;
+	aspect-ratio: 6/3;
+	height: 450px;
+	padding: 5px;
+}
+
+.background {
+	color: purple;
+}
+
+body {
+	background-color: lightblue;
+}
