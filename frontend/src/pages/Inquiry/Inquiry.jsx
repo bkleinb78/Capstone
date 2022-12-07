@@ -1,4 +1,6 @@
 import React from "react";
+import "./Inquiry.css";
+
 
 const Inquiry = () => {
   const sendInquiry = () => {
@@ -14,15 +16,17 @@ const Inquiry = () => {
 
   return (
     <div>
-      <div>
-        <label htmlFor="inquiry_name">Name</label>
-        <input type="text" id="inquiry_name" />
-      </div>
-      <div>
-        <label htmlFor="inquiry_message">Message</label>
-        <textarea name="" id="inquiry_message" cols="30" rows="10"></textarea>
-      </div>
-      <button onClick={() => sendInquiry()}>Send email</button>
+      <h1>Inquiry Form</h1>
+      <form className='cf'>
+        <div className='half left cf'>
+          <input type='text' placeholder='Name' name='user_name' />
+          <input type='email' placeholder='Email address' name='user_email' />
+        </div>
+        <div className='half right cf'>
+          <textarea name='message' type='text' placeholder='Message'></textarea>
+        </div>
+        <input type='submit' value='Submit' id='input-submit' />
+      </form>
     </div>
   );
 };

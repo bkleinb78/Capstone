@@ -100,10 +100,10 @@ const Events = () => {
   return (
     <div className="EventsPage">
       <div className="events">
-        <h3>Available events :</h3>
+        <h3>Available Events :</h3>
         <div className="events_container">
           {events?.map((event, index) => (
-            <div className="event" key={index}>
+            <div className="event-grid" key={index}>
               <h4 className="event_name">{event.name}</h4>
               <p className="event_address">{event.address}</p>
               <p className="event_date">{event.date}</p>
@@ -113,7 +113,7 @@ const Events = () => {
         </div>
       </div>
       <div className="track">
-        <h3>Available tracks :</h3>
+        <h3>Available Tracks :</h3>
         <div className="track_container">
           {tracks?.map((track, index) => (
             <div className="track" key={index}>
