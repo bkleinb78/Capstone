@@ -112,7 +112,7 @@ const Events = () => {
           ))}
         </div>
       </div>
-      <div className="track">
+      <div className="tracks">
         <h3>Available Tracks :</h3>
         <div className="track_container">
           {tracks?.map((track, index) => (
