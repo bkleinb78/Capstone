@@ -34,9 +34,13 @@
   
   .track {
     display: grid;
-    width: 100%;
+    align-self: auto;
+    grid-template-rows: 6;
     background-color: white;
-    gap: 3vh;
+    width: 75%;
+    margin: 20px;
+    margin-left: 0px;
+    background-color: blue;
   }
   
   .event_name {
@@ -79,3 +83,7 @@
     width: 100%;
     gap: 5vh;
   }
+
+.background-color {
+  background-color: yellow;
+}

@@ -72,6 +72,10 @@ textarea {
   display: table;
 }
 
+footer {
+    display: bottom;
+}
+
 .cf:after {
   clear: both;
 }

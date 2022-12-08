@@ -47,7 +47,10 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h2>Welcome to Wolfman's entrtainment and karaoke</h2>
+      <h1>Services</h1>
+      Wolfman Entertainment is a full service karaoke company servicing the north suburbs of Chicago.
+      With over 60,000 songs in the collection and new ones added frequently, Brad Wolf hosts an entertaining evening.
+      I added a top 5 song tracks on my events page for you to view.
     </div>
   );
 };
