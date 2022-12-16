@@ -13,7 +13,6 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import Events from "./pages/Events/Events";
-import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Inquiry from "./pages/Inquiry/Inquiry";
 import Payments from "./pages/Payments/Payments";
@@ -23,7 +22,6 @@ const Layout = (
   <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/events" element={<Events />} />
-    <Route path="/about" element={<About />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/inquiry" element={<Inquiry />} />
     <Route path="/payments" element={<Payments />} />
@@ -39,7 +37,6 @@ function App() {
       <Routes>
         <Route path="/" element ={<HomePage />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/payments" element={<Payments />} />

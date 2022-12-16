@@ -44,7 +44,7 @@ const Events = () => {
         </div>
       </div>
       <div className="tracks">
-        <h3>Available Tracks :</h3>
+        <h3>Available Top 5 Tracks :</h3>
         <div className="track_container">
           {tracks?.map((track, index) => (
             <div className="track" key={index}>

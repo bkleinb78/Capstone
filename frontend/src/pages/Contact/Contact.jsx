@@ -6,8 +6,10 @@ const Contact = () => {
     <div class="navbar-header">
     <div class="contact">
     <div class="background">
-    <h1>Contact Us</h1>
+    <h2>Contact Us</h2>
     <a href="tel:18475309221" className="btn btn-success">Call Us!</a>
+    <br>
+    </br>
     <a href="sms:18475309221" className="btn btn-warning">Text Us!</a>
     </div>
      </div>
