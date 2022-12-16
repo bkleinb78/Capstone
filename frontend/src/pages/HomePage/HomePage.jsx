@@ -75,8 +75,16 @@ const HomePage = (props) => {
         </div>
         <h2 class="karaoke">Karaoke</h2>
         <div class="sing">
-          <img src="https://www.katiejoyce.com/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-0/350/648350/C4fIEYXC/2f9ad35c9a2f4bcbba074cb4ec4214ad" alt=""/>
+        <img src="https://static.wixstatic.com/media/190aaf_fb14febb00b7488484ac5336bafe4d7e~mv2.jpg/v1/fill/w_700,h_700,al_c,q_85,enc_auto/ni%20lpgo.jpg" alt=""/>
         </div>
+        <div class="div-2">
+          <span class="p">Neightborhood Inn is smoke free and has an awesome patio outdoors with seating for smokers.
+
+              Karaoke is every Saturday at from 9pm-12am
+          </span>
+          </div>
+          <h2 class="about">About Brad</h2>
+          <span class="info">I am a KJ in the Chicago north suburbs for the last 8 years. I have a large selection of songs to sing in many brands. I use Conmpuhost Karaoke. I frequently update both old and new, legal downloads, always expanding my repertoize of songs for you to enjoy senging. I have hosted at many of the chicago bars and i do some private parties as well. My goal as a Karaoke Host is to make everyone feel happier and, better about themselves! </span>
       </>
   );
 };

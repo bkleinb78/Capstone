@@ -12,7 +12,6 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
 // Util Imports
-import PrivateRoute from "./utils/PrivateRoute";
 import Events from "./pages/Events/Events";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
