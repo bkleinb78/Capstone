@@ -103,7 +103,11 @@ const HomePage = (props) => {
           </p>
           </div>
           <h2 class="about">About Brad</h2>
+          <br>
+          </br>
+          <div>
           <span class="info">I am a KJ in the Chicago north suburbs for the last 8 years. I have a large selection of songs to sing in many brands. I use Compuhost Karaoke. I frequently update both old and new, legal downloads, always expanding my repertoize of songs for you to enjoy senging. I have hosted at many of the chicago bars and i do some private parties as well. My goal as a Karaoke Host is to make everyone feel happier and, better about themselves! </span>
+          </div>
       </>
   );
 };
