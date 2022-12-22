@@ -23,14 +23,15 @@ def music_detail(request, pk):
     track = get_object_or_404(track, pk=pk)
     if request.method == 'GET':
         track = get_object_or_404(Track, pk-pk)
-        serializer = TrackSerializer(track)
+        serializers = TrackSerializer(track)
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = TrackSerializer(track, data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializers = TrackSerializer(track, data=request.data)
+        serializers.is_valid(raise_exception=True)
+        serializers.save()
         return Response(serializer.data)
     elif request.method == 'DELETE':
+        serializer =TrackSerializer(track)
         track.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 

@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/cars/', include('cars.urls')),
     path('api/events/', include('events.urls')),
     path('api/music/', include('music.urls')),
+    path('api/djqueue/', include('djqueue.urls')), 
 ]

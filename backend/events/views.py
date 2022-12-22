@@ -9,8 +9,8 @@ from .models import Event
 @api_view(['GET', 'POST'])
 def events_list(request):
     if request.method == 'GET':
-        event = Event.objects.all()
-        serializer = EventSerializer(event, many=True)
+        events = Event.objects.all()
+        serializer = EventSerializer(events, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = EventSerializer(data=request.data)
@@ -31,6 +31,5 @@ def events_detail(request, pk):
         serializer.save()
         return Response(serializer.data)
     elif request.method == 'DELETE':
-        serializer =EventSerializer(event)
         event.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
