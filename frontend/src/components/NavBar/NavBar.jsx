@@ -1,13 +1,17 @@
 import React from "react";
 import { useContext } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-// import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 
 const Navbar = () => {
-  // const { logoutUser, user } = useContext(AuthContext);
-  // const navigate = useNavigate();
-  return (
+   const { logoutUser, user } = useContext(AuthContext);
+   const navigate = useNavigate();
+  const logout = () =>{
+    logoutUser();
+  }
+
+   return (
     <div className="navbar">
       <span class="color_11">WOLFMAN ENTERTAINMENT</span>
       <div>
@@ -28,6 +32,7 @@ const Navbar = () => {
           alt=""
         />
       </div>
+      {user&&<button style={{position:"absolute", top:10, right:15}} onClick={logout}>Logout</button>}
       </div>
   );
 };

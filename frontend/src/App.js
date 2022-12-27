@@ -12,6 +12,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 
 // Util Imports
+import PrivateRoute from "./utils/PrivateRoute";
 import Events from "./pages/Events/Events";
 import Contact from "./pages/Contact/Contact";
 import Inquiry from "./pages/Inquiry/Inquiry";
@@ -35,7 +36,14 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element ={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <HomePage />
+            </PrivateRoute>  
+          }
+         />
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/inquiry" element={<Inquiry />} />

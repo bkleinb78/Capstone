@@ -59,6 +59,7 @@ img {
 .navbar {
   width: 100%;
   background-color: white;
+  position: relative;
 }
 
 .navbar a {
