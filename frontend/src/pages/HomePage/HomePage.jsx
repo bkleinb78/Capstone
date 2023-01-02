@@ -42,6 +42,10 @@ const HomePage = (props) => {
       let response = await axios.post("http://127.0.0.1:8000/api/djqueue/",{name, title, artist, genre});
       setQueue([...queue, response.data]);
       setLoading(false);
+      setName("");
+      setTitle("");
+      setArtist("");
+      setGenre("");
     } catch (error) {
       console.log(error.response.data);
     }

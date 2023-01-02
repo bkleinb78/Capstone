@@ -32,6 +32,7 @@ const Navbar = () => {
           alt=""
         />
       </div>
+      {user&&<span style={{position:"absolute",fontSize:'20px', top:10, right:200}}>welcome {user.username}</span>}
       {user&&<button style={{position:"absolute", top:10, right:15}} onClick={logout}>Logout</button>}
       </div>
   );
