@@ -24,7 +24,7 @@ const Navbar = () => {
         <NavLink to="/events">EVENTS</NavLink>
         <NavLink to="/contact">CONTACT</NavLink>
         <NavLink to="/inquiry">INQUIRY</NavLink>
-        <NavLink to="/payments">PAYMENTS</NavLink>
+        {user&&(user.id!==1&&<NavLink to="/payments">PAYMENTS</NavLink>)}
       </ul>
       <div className="logo">
         <img

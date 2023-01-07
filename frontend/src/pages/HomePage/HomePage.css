@@ -8,10 +8,15 @@
   padding: 15px;
 }
 .info{
-  width: 70%;
+  /* width: 70%; */
+  max-width: 85ch;
   margin: auto;
 }
 
+.wid{
+  width:30%;
+  font-size: small;
+}
 
 .services-container{
   display: flex;

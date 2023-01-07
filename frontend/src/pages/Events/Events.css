@@ -15,10 +15,10 @@
   }
   
   .events_container,
-  .tracks_container {
-    display: grid;
+  .track_container {
+    display: flex;
     align-items: auto;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 6vh;
   }
@@ -29,7 +29,6 @@
     grid-template-columns: 5;
     grid-template-rows: 5;
     background-color: white;
-    width: 75%;
   }
   
   .track {
@@ -37,7 +36,7 @@
     align-self: auto;
     grid-template-rows: 6;
     background-color: white;
-    width: 75%;
+    width: 20%;
     margin: 20px;
     margin-left: 0px;
   }

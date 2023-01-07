@@ -157,7 +157,7 @@ const HomePage = (props) => {
 
         <div>
           <p class="p">
-            Neightborhood Inn is smoke free and has an awesome patio outdoors
+            Neighborhood Inn is smoke free and has an awesome patio outdoors
             with seating for smokers. Karaoke is every Saturday at from
             9pm-12am.
             <br></br>
@@ -208,15 +208,28 @@ const HomePage = (props) => {
       <h2 class="about">About Brad</h2>
       <br></br>
       <div class="info">
-        <span>
+        <div style = {{lineHeight:"30px", display:"flex", justifyContent:"space-between"}}>
+          <div class="wid">
           I am a KJ in the Chicago north suburbs for the last 8 years. I have a
-          large selection of songs to sing in many brands. I use Compuhost
-          Karaoke. I frequently update both old and new, legal downloads, always
+          large selection of songs to sing in many brands.I use Compuhost
+          Karaoke. I can change the key up or down by half steps. I can also speed up or slow down your song by 15%
+          I frequently update both old and new, legal downloads, always
           expanding my repertoize of songs for you to enjoy senging. I have
           hosted at many of the chicago bars and i do some private parties as
-          well. My goal as a Karaoke Host is to make everyone feel happier and,
-          better about themselves!{" "}
-        </span>
+          well. 
+          </div>
+          <div class="wid">
+          My goal as a Karaoke Host is to make everyone feel happier and,
+          better about themselves! To make every singer sound great, to be kind to all and, make people laugh
+          and, feel glad they came in to my karaoke shows.State of the art sound equipment and, lots of dance lights!
+          Thank you for the support, I'm very grateful. Wolfman Karaoke and Entertanment uses only professional grade sound and lighting systems to enhance your special accasion.
+          
+          </div>
+          <div class="wid">
+          Brad will sing, Disc Jockey or karaoke host all of your favorites from oldies to current hits today.
+          Wolfman Entertainment and Karaoke has an extensive list satisified customers, and many repeat customers from weddings and private parties all over Chicago for a truly professional and memorable event, call Wolfman Entertainment and Karaoke now!{" "}
+          </div> 
+           </div>
       </div>
     </>
   );

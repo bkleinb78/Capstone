@@ -183,13 +183,13 @@ const Events = () => {
         </div>
       </div>
       <div className="tracks">
-        <h3>Available Top 5 Tracks :</h3>
+        <h3>Available Top 8 Tracks :</h3>
         <div className="track_container">
           {tracks?.map((track, index) => 
             <Track track={track} key={index}/>
           )}
         </div>
-        {user&&(user.id===1&&<div>
+        {user&&(user.id===1&&<div style={{width:"40%"}}>
           <div>
             
               <div className="cf">
