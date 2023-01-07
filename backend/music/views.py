@@ -20,16 +20,16 @@ def music_list(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def music_detail(request, pk):
-    track = get_object_or_404(track, pk=pk)
+    track = get_object_or_404(Track, pk=pk)
     if request.method == 'GET':
-        track = get_object_or_404(Track, pk-pk)
+        track = get_object_or_404(Track, pk=pk)
         serializers = TrackSerializer(track)
-        return Response(serializer.data)
+        return Response(serializers.data)
     elif request.method == 'PUT':
         serializers = TrackSerializer(track, data=request.data)
         serializers.is_valid(raise_exception=True)
         serializers.save()
-        return Response(serializer.data)
+        return Response(serializers.data)
     elif request.method == 'DELETE':
         serializer =TrackSerializer(track)
         track.delete()
