@@ -21,7 +21,7 @@ const HomePage = (props) => {
 
   const fetchQueue = async () => {
     try {
-      let response = await axios.get("http://127.0.0.1:8000/api/djqueue/", {
+      let response = await axios.get("https://karaokewebsite.netlify.app//api/djqueue/", {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -37,9 +37,29 @@ const HomePage = (props) => {
     fetchQueue();
   }, [token]);
 
-  const addQueue = async () =>{
+  const addQueue = async (id, name1, title1, artist1, genre1) =>{
     try {
-      let response = await axios.post("http://127.0.0.1:8000/api/djqueue/",{name, title, artist, genre});
+      let response = await axios.put(`https://karaokewebsite.netlify.app//api/djqueue/${id}/`,{name:name1, title:title1, artist:artist1, genre:genre1});
+      
+      // let response = await axios.post("https://karaokewebsite.netlify.app//api/djqueue/",{name, title, artist, genre});
+      // setQueue([...queue, response.data]);
+      // let response1 = await axios.delete(`https://karaokewebsite.netlify.app//api/djqueue/${id}/`);
+      // setQueue([...queue, response1.data]);
+      // console.log(name);
+      fetchQueue();
+
+      setLoading(false);
+      setName("");
+      setTitle("");
+      setArtist("");
+      setGenre("");
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  }
+  const requestQueue = async () =>{
+    try {
+      let response = await axios.post("https://karaokewebsite.netlify.app//api/djqueue/",{name:"wait"+name, title, artist, genre});
       setQueue([...queue, response.data]);
       setLoading(false);
       setName("");
@@ -51,10 +71,11 @@ const HomePage = (props) => {
     }
   }
   
+  
   const removeQueue = async (id) =>{
     try {
       console.log(id);
-      let response = await axios.delete(`http://127.0.0.1:8000/api/djqueue/${id}/`);
+      let response = await axios.delete(`https://karaokewebsite.netlify.app//api/djqueue/${id}/`);
       fetchQueue();
     } catch (error) {
       console.log(error.response.data);
@@ -64,7 +85,7 @@ const HomePage = (props) => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/events/", {
+        let response = await axios.get("https://karaokewebsite.netlify.app//api/events/", {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -81,7 +102,7 @@ const HomePage = (props) => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
+        let response = await axios.get("https://karaokewebsite.netlify.app//api/cars/", {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -177,14 +198,22 @@ const HomePage = (props) => {
               <th>Genre</th>
             </tr>
             {queue?.map((que, index) => (
+              // que.name.slice(0,4)==="wait"?
               <tr key={index}>
-                <td class="td-content">{que.name}</td>
+                {que.name.slice(0,4)==="wait"?<td class="td-content">{(que.name).replace("wait","")}</td>:<td class="td-content">{que.name}</td>}
                 <td class="td-content">{que.title}</td>
                 <td class="td-content">{que.artist}</td>
                 <td class="td-content">{que.genre}</td>
+                
                 {user&&(user.id===1&&<td class="td-content">
                   <button onClick={()=>removeQueue(que.id)}>Remove</button>
                 </td>)}
+                {user&&(user.id===1&&que.name.slice(0,4)==="wait"&&<td class="td-content">
+                  <button onClick={()=>{
+                    addQueue(que.id,que.name.replace("wait", ""),que.title, que.artist, que.genre);
+                    }}>Accept</button>
+                </td>)}
+                {que.name.slice(0,4)==="wait"&&<td class="td-content">{que.name.slice(0,4)}</td>}
               </tr>
             ))}
             {user&&(loading==true&&<tr style={{paddingTop:"50px"}}>
@@ -200,7 +229,7 @@ const HomePage = (props) => {
               <td class="td-content"><input type="text" placeholder="Title" onChange={(e)=>setTitle(e.target.value)} value={title} name="queue_title"/></td>
               <td class="td-content"><input type="text" placeholder="Artist" onChange={(e)=>setArtist(e.target.value)} value={artist} name="queue_artist"/></td>
               <td class="td-content"><input type="text" placeholder="Genre" onChange={(e)=>setGenre(e.target.value)} value={genre} name="queue_genre"/></td>              
-              <td class="td-content"><button onClick={()=>setLoading(true)}>Request Queue</button></td>
+              <td class="td-content"><button onClick={requestQueue}>Request Queue</button></td>
             </tr>}
           </table>
         </div>

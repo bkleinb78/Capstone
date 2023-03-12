@@ -31,7 +31,7 @@ const Events = () => {
     const editTrack = async (id) =>{
       try {
         console.log(id);
-        let response = await axios.put(`http://127.0.0.1:8000/api/music/${id}/`,{title:title1, artist:artist1, album:album1, genre:genre1, release_date:release_date1});
+        let response = await axios.put(`https://karaokewebsite.netlify.app//api/music/${id}/`,{title:title1, artist:artist1, album:album1, genre:genre1, release_date:release_date1});
         setEditing(false);
         getAllMusic();
       } catch (error) {
@@ -42,7 +42,7 @@ const Events = () => {
     const removeTrack = async (id) =>{
       try {
         console.log(id);
-        let response = await axios.delete(`http://127.0.0.1:8000/api/music/${id}/`);
+        let response = await axios.delete(`https://karaokewebsite.netlify.app//api/music/${id}/`);
         getAllMusic();
       } catch (error) {
         console.log(error.response.data);
@@ -87,7 +87,7 @@ const Events = () => {
     // }
     const editEvent = async (id) =>{
       try {
-        let response = await axios.put(`http://127.0.0.1:8000/api/events/${id}/`,{name:name1, address:address1, date:date1, time:time1});
+        let response = await axios.put(`https://karaokewebsite.netlify.app//api/events/${id}/`,{name:name1, address:address1, date:date1, time:time1});
         setEditing(false);
         // console.log(time1);
         getAllEvents();
@@ -104,7 +104,7 @@ const Events = () => {
     const removeEvent = async (id) =>{
       try {
         console.log(id);
-        let response = await axios.delete(`http://127.0.0.1:8000/api/events/${id}/`);
+        let response = await axios.delete(`https://karaokewebsite.netlify.app//api/events/${id}/`);
         getAllEvents();
       } catch (error) {
         console.log(error.response.data);
@@ -133,7 +133,7 @@ const Events = () => {
   }
 
   const addEvent = async() =>{
-    let response  = await axios.post("http://127.0.0.1:8000/api/events/", {name, address, date, time});
+    let response  = await axios.post("https://karaokewebsite.netlify.app//api/events/", {name, address, date, time});
     setEvents([...events, response.data]);
     setName("");
     setAddress("");
@@ -142,7 +142,7 @@ const Events = () => {
   }
 
   const addTrack = async() => {
-    let response  = await axios.post("http://127.0.0.1:8000/api/music/", {title, artist, album, genre, release_date});
+    let response  = await axios.post("https://karaokewebsite.netlify.app//api/music/", {title, artist, album, genre, release_date});
     setMusic([...tracks, response.data]);
     setTitle("");
     setArtist("");
@@ -156,7 +156,7 @@ const Events = () => {
   }, []);
 
   async function getAllEvents() {
-    let response = await axios.get("http://127.0.0.1:8000/api/events/");
+    let response = await axios.get("https://karaokewebsite.netlify.app//api/events/");
     setEvents(response.data);
     
     console.log(response.data);
@@ -167,7 +167,7 @@ const Events = () => {
   }, []);
 
   async function getAllMusic() {
-    let response = await axios.get("http://127.0.0.1:8000/api/music/");
+    let response = await axios.get("https://karaokewebsite.netlify.app//api/music/");
     setMusic(response.data);
   }
 
