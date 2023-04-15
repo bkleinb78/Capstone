@@ -21,7 +21,7 @@ const HomePage = (props) => {
 
   const fetchQueue = async () => {
     try {
-      let response = await axios.get("https://karaokewebsite.netlify.app//api/djqueue/", {
+      let response = await axios.get("http://127.0.0.1:8000/api/djqueue/", {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -39,11 +39,11 @@ const HomePage = (props) => {
 
   const addQueue = async (id, name1, title1, artist1, genre1) =>{
     try {
-      let response = await axios.put(`https://karaokewebsite.netlify.app//api/djqueue/${id}/`,{name:name1, title:title1, artist:artist1, genre:genre1});
+      let response = await axios.put("http://127.0.0.1:8000/api/djqueue/",{name, title, artist, genre});
       
-      // let response = await axios.post("https://karaokewebsite.netlify.app//api/djqueue/",{name, title, artist, genre});
+      // let response = await axios.post("http://127.0.0.1:8000/api/djqueue/",{name, title, artist, genre});
       // setQueue([...queue, response.data]);
-      // let response1 = await axios.delete(`https://karaokewebsite.netlify.app//api/djqueue/${id}/`);
+      // let response1 = await axios.delete("http://127.0.0.1:8000/api/djqueue/");
       // setQueue([...queue, response1.data]);
       // console.log(name);
       fetchQueue();
@@ -59,7 +59,7 @@ const HomePage = (props) => {
   }
   const requestQueue = async () =>{
     try {
-      let response = await axios.post("https://karaokewebsite.netlify.app//api/djqueue/",{name:"wait"+name, title, artist, genre});
+      let response = await axios.post("http://127.0.0.1:8000/api/djqueue/",{name, title, artist, genre});
       setQueue([...queue, response.data]);
       setLoading(false);
       setName("");
@@ -75,7 +75,7 @@ const HomePage = (props) => {
   const removeQueue = async (id) =>{
     try {
       console.log(id);
-      let response = await axios.delete(`https://karaokewebsite.netlify.app//api/djqueue/${id}/`);
+      let response = await axios.delete("http://127.0.0.1:8000/api/djqueue/");
       fetchQueue();
     } catch (error) {
       console.log(error.response.data);
@@ -85,7 +85,7 @@ const HomePage = (props) => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        let response = await axios.get("https://karaokewebsite.netlify.app//api/events/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/events/", {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -102,7 +102,7 @@ const HomePage = (props) => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        let response = await axios.get("https://karaokewebsite.netlify.app//api/cars/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
           headers: {
             Authorization: "Bearer " + token,
           },
